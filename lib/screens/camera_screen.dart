@@ -58,9 +58,9 @@ class _CameraScreenState extends State<CameraScreen> with WidgetsBindingObserver
   final List<GpsTelemetry> _videoSamples = [];
   int _recordingRotation = 0;
 
-  // Non-blocking capture queue & shutter flash
+  // Non-blocking capture queue & shutter button feedback
   int _pendingCapturesCount = 0;
-  bool _showShutterFlash = false;
+  bool _shutterPressed = false;
 
   // Top pop-up toast notification state (adapts to Portrait & Landscape top edge)
   String? _toastMessage;
@@ -683,9 +683,9 @@ class _CameraScreenState extends State<CameraScreen> with WidgetsBindingObserver
     }
 
     HapticFeedback.mediumImpact();
-    setState(() => _showShutterFlash = true);
-    Timer(const Duration(milliseconds: 120), () {
-      if (mounted) setState(() => _showShutterFlash = false);
+    setState(() => _shutterPressed = true);
+    Timer(const Duration(milliseconds: 100), () {
+      if (mounted) setState(() => _shutterPressed = false);
     });
 
     try {
@@ -991,11 +991,6 @@ class _CameraScreenState extends State<CameraScreen> with WidgetsBindingObserver
                 ],
               ),
 
-              // Instant Shutter Flash Animation (120ms)
-              if (_showShutterFlash)
-                IgnorePointer(
-                  child: Container(color: Colors.white.withValues(alpha: 0.85)),
-                ),
             ],
           ),
         );
@@ -1929,34 +1924,39 @@ class _CameraScreenState extends State<CameraScreen> with WidgetsBindingObserver
         alignment: Alignment.center,
         clipBehavior: Clip.none,
         children: [
-          Container(
-            width: 74,
-            height: 74,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              border: Border.all(
-                color: Colors.white,
-                width: 3.5,
-              ),
-            ),
-            padding: const EdgeInsets.all(4.5),
+          AnimatedScale(
+            scale: _shutterPressed ? 0.90 : 1.0,
+            duration: const Duration(milliseconds: 80),
+            curve: Curves.easeOut,
             child: Container(
+              width: 74,
+              height: 74,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: _isVideoMode ? Colors.black : _accentYellow,
+                border: Border.all(
+                  color: Colors.white,
+                  width: 3.5,
+                ),
               ),
-              child: Center(
-                child: _isVideoMode
-                    ? AnimatedContainer(
-                        duration: const Duration(milliseconds: 200),
-                        width: _isRecording ? 24 : 20,
-                        height: _isRecording ? 24 : 20,
-                        decoration: BoxDecoration(
-                          color: _isRecording ? const Color(0xFFEF4444) : Colors.white,
-                          borderRadius: BorderRadius.circular(_isRecording ? 5 : 20),
-                        ),
-                      )
-                    : const SizedBox.shrink(),
+              padding: const EdgeInsets.all(4.5),
+              child: Container(
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: _isVideoMode ? Colors.black : _accentYellow,
+                ),
+                child: Center(
+                  child: _isVideoMode
+                      ? AnimatedContainer(
+                          duration: const Duration(milliseconds: 200),
+                          width: _isRecording ? 24 : 20,
+                          height: _isRecording ? 24 : 20,
+                          decoration: BoxDecoration(
+                            color: _isRecording ? const Color(0xFFEF4444) : Colors.white,
+                            borderRadius: BorderRadius.circular(_isRecording ? 5 : 20),
+                          ),
+                        )
+                      : const SizedBox.shrink(),
+                ),
               ),
             ),
           ),
