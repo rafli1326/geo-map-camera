@@ -75,13 +75,14 @@ Sebelum mulai mengembangkan, pastikan perangkat Anda telah terpasang:
 
 ---
 
-## 🐛 Melaporkan Masalah (Bug Reports)
+## 🐛 Melaporkan Masalah & Keamanan (Issues & Security)
 
-Jika menemukan kendala atau perilaku tidak terduga pada aplikasi:
+Jika menemukan kendala, perilaku tidak terduga, atau potensi celah keamanan pada aplikasi:
 1. Buka tab **[Issues](https://github.com/rafli1326/geo-map-camera/issues)** di repositori.
 2. Periksa apakah isu serupa sudah pernah dilaporkan sebelumnya.
 3. Buat issue baru dengan menyertakan:
    - Tipe perangkat dan versi Android (contoh: *itel P661N, Android 12*).
+   - Deskripsi kendala atau temuan keamanan.
    - Langkah-langkah untuk mereproduksi masalah (*steps to reproduce*).
    - Tangkapan layar (*screenshot*) atau log error bila ada.
 
@@ -90,3 +91,4 @@ Jika menemukan kendala atau perilaku tidak terduga pada aplikasi:
 ## 💡 Mengajukan Ide & Fitur Baru (Feature Requests)
 
 Punya ide untuk menyempurnakan Geo Map Camera? Kami sangat terbuka untuk berdiskusi! Silakan buat issue baru dengan label `enhancement` dan jelaskan bagaimana fitur tersebut bermanfaat untuk kegiatan survei atau dokumentasi lapangan.
+

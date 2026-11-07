@@ -122,17 +122,18 @@ Kontribusi dari komunitas sangat dihargai! Silakan baca panduan lengkap di **[CO
 
 ---
 
-## 🔒 Keamanan (Security)
+## 🐛 Pelaporan Masalah & Keamanan (Issues & Security)
 
-Jika Anda menemukan kerentanan keamanan, harap laporkan secara privat sesuai prosedur di **[SECURITY.md](SECURITY.md)** atau hubungi pengembang melalui email.
+Jika Anda menemukan bug, kendala teknis, atau potensi celah keamanan, silakan laporkan langsung melalui **[GitHub Issues](https://github.com/rafli1326/geo-map-camera/issues)** dengan menyertakan rincian kendala, tipe perangkat Android, dan langkah-langkah untuk mereproduksinya.
 
 ---
 
-## 👤 Penulis & Pengelola (Author & Maintainer)
+## 👥 Tim & Kontributor (Authors & Contributors)
 
 - **Muhammad Rafli** ([@rafli1326](https://github.com/rafli1326)) - *Lead Developer & Maintainer*
   - GitHub: [github.com/rafli1326](https://github.com/rafli1326)
   - Email: `rafli.maildir@gmail.com`
+- **Gemini** (Google DeepMind) - *AI Pair Programmer & Code Contributor*
 
 ---
 
