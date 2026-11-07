@@ -130,9 +130,9 @@ Jika Anda menemukan bug, kendala teknis, atau potensi celah keamanan, silakan la
 
 ## 👥 Tim & Kontributor (Authors & Contributors)
 
-- **Muhammad Rafli** ([@rafli1326](https://github.com/rafli1326)) - *Lead Developer & Maintainer*
+- **Rafli** ([@rafli1326](https://github.com/rafli1326)) - *Lead Developer & Maintainer*
   - GitHub: [github.com/rafli1326](https://github.com/rafli1326)
-  - Email: `rafli.maildir@gmail.com`
+  - Email: `loneliness.prj@gmail.com`
 - **Gemini** (Google DeepMind) - *AI Pair Programmer & Code Contributor*
 
 ---
